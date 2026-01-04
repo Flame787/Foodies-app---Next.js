@@ -25,5 +25,69 @@ Examples of features that are not available on serverside:
 - we put 'use client';  on top of any Client Component code
 
 
+Github repo creation:
+
+- start new repository (public), add some name to new repo: Foodies-app---Next.js
+
+-> 'git init' not needed if we already created Next.app with create-next-app command (it automatically uses git & marks changes locally)
+
+.../foodies (master)
+$ git remote add origin https://github.com/Flame787/Foodies-app---Next.js.git   -> connecting our local code with newly created remote repository
+
+.../foodies (master)
+$ git remote -v            -> checking if remote repository was successfully connected, if we can make fetch or push actions to it
+
+origin  https://github.com/Flame787/Foodies-app---Next.js.git (fetch)
+origin  https://github.com/Flame787/Foodies-app---Next.js.git (push)
+
+.../foodies (master)
+$ git branch -M main
+git push -u origin main
+
+            -> *** git branch -M main  -> if your main branch is called 'master', but you want to rename it to 'main' (standard today)
+
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (21/21), 55.38 KiB | 6.92 MiB/s, done.
+Total 21 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Flame787/Foodies-app---Next.js.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+.../foodies (main)      -> *** now main branch is called 'main', not 'master' anymore.
+$ git add .             -> adding all code to the staging environment
+
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/globals.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/layout.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/page.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'next.config.js', LF will be replaced by CRLF the next time Git touches it
+
+.../foodies (main)
+$ git commit -m "initial commit"       -> commiting added code, getting the 1st commit ready before publishing to GitHub
+
+[main 7ca77c7] initial commit
+ 48 files changed, 562 insertions(+), 315 deletions(-)
+ ... ... ...
+
+.../foodies (main)
+$ git push -u origin main         -> pushing 1st commit to GitHub (1st time, we have to write the full phrase, but later, only: git push)
+
+Enumerating objects: 49, done.
+Counting objects: 100% (49/49), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (41/41), done.
+Writing objects: 100% (44/44), 2.34 MiB | 1.82 MiB/s, done.
+Total 44 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/Flame787/Foodies-app---Next.js.git
+   5f16376..7ca77c7  main -> main
+branch 'main' set up to track 'origin/main'.
+
+
+
 
 
