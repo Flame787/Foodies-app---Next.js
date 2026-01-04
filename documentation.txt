@@ -1,0 +1,29 @@
+Installed the stable version of Next-app, not the latest version (NEVER INSTALL LATEST VERSION - INSTABILLITY!):
+
+npx create-next-app@15.1.6 my-project --no-ts --no-tailwind --yes
+
+
+React Server Components (RSC) vs. Client Components (Browser)
+
+- Next.js is fullstack framework with frontend & backend
+
+- by default, all React components in a Next.js project (pages, layouts or other components) are ONLY RENDERED ON THE SERVER!
+  => React Server Components (RSC) - they do not execute on browser, but on server
+
+- all the code of Server components is visible via Dev Tools, so it can also be used by web crawlers for best possible SEO
+
+- Client Components - pre-rendered on server, bu then also potencially rendered on client (browser)
+                    - they must be rendered on client, because they contain some features that are only available on browser (clientside)
+
+Examples of features that are not available on serverside:
+- hooks: like useState, useEffect
+- intervals, event-handlers
+
+- if we want to build a Client Component, we have to announce it specially in Next.js
+
+- 'use client' directive - enables to use clientside features in a component
+- we put 'use client';  on top of any Client Component code
+
+
+
+
