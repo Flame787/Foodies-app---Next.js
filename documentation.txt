@@ -88,6 +88,21 @@ To https://github.com/Flame787/Foodies-app---Next.js.git
 branch 'main' set up to track 'origin/main'.
 
 
+Adding an SQLite database:
+
+npm install better-sqlite3   - package for working with SQLite database
+
+- add code for initializing database in file initdb.js (in root of the project)
+- from root of the project, run command: 
+  node initdb.js
+  -> this creates a new file: meals.db (but canoot be viewed with VSC editor, contains some db-data)
+
+- in meals/page.js we don't need to use useEffect to fetch data from the base, because even frontend already run on server. 
+Server components: we dont need to use fetch-requests to fetch data
+Instead, we can directly reach to the data on the server.
+
+
+lib - new folder in root of the project -> meals.js
 
 
 
