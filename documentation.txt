@@ -104,5 +104,9 @@ Instead, we can directly reach to the data on the server.
 
 lib - new folder in root of the project -> meals.js
 
+*** this app is showing the App Router approach (more modern, but maybe not so stable).
+But there is also Page Router approach - older, but more stable - also for building Fullstack applications with Next.js. 
+- different folder structure & some other features
+
 
 
