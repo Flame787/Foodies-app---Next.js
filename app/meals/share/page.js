@@ -2,8 +2,23 @@
 
 import classes from "./page.module.css";
 import ImagePicker from "../image-picker";
+import { shareMeal } from "../../../lib/actions";   
+// imported this server-function from a specific file, now it can be used even in a client-component without issues (it's code stays on server-side)
 
 export default function ShareMealPage() {
+  // async function shareMeal(formData) {
+  //   "use server"; // 'use server'-directive for async server functions. Here, we are adding this function to form-submition-action.
+
+  //   const meal = {
+  //     title: formData.get("title"), // getting teh value of the input-field with the name 'title' or 'summary'
+  //     summary: formData.get("summary"),
+  //     instructions: formData.get('instructions'),
+  //     image: formData.get('image'),     // image should be stored in file system, and path should be stored to the database
+  //     creator: formData.get('name'),
+  //     creator_email: formData.get('email'),
+  //   };
+  // }
+
   return (
     <>
       <header className={classes.header}>
@@ -13,7 +28,7 @@ export default function ShareMealPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={classes.main}>
-        <form className={classes.form}>
+        <form className={classes.form} action={shareMeal}>
           <div className={classes.row}>
             <p>
               <label htmlFor="name">Your name</label>
@@ -41,7 +56,7 @@ export default function ShareMealPage() {
               required
             ></textarea>
           </p>
-          <ImagePicker />
+          <ImagePicker label="Your image" name="image" />
           <p className={classes.actions}>
             <button type="submit">Share Meal</button>
           </p>
